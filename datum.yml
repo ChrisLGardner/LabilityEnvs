@@ -1,0 +1,26 @@
+
+ResolutionPrecedence:
+  - 'Environments\$($Node.Environment)\$($Node.Name)'
+  - 'VMs\$($Node.Role)'
+
+default_lookup_options: MostSpecific
+
+lookup_options:
+  configurations:
+    merge_basetype_array: Unique
+  LCM_config:
+    merge_hash: hash
+  LCM_config\ConfigurationRepositoryShare: deep
+  LCM_config\ConfigurationRepositoryWeb: deep
+  LCM_config\PartialConfiguration: deep
+  LCM_config\ReportServerWeb: deep
+  LCM_config\ResourceRepositoryShare: deep
+  LCM_config\ResourceRepositoryWeb: deep
+  LCM_config\Settings: deep
+  SoftwareBase: hash
+  SoftwareBase\Packages:
+    merge_hash_array: DeepTuple
+    merge_options:
+      tuple_keys:
+        - Name
+        - Version
