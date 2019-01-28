@@ -1,13 +1,24 @@
 
 ResolutionPrecedence:
   - 'Environments\$($Node.Environment)\$($Node.Name)'
-  - 'VMs\$($Node.Role)'
+  - 'Role\$($Node.Role)'
 
 default_lookup_options: MostSpecific
 
+DatumStructure:
+  - StoreName: Environments
+    StoreProvider: Datum::File
+    StoreOptions:
+      Path: "./Environments"
+  - StoreName: Role
+    StoreProvider: Datum::File
+    StoreOptions:
+      Path: "./VMs/*/*.psd1"
+
 lookup_options:
-  configurations:
-    merge_basetype_array: Unique
+  Role:
+    merge_hash: hash
+  Role\AllNodes: Unique
   LCM_config:
     merge_hash: hash
   LCM_config\ConfigurationRepositoryShare: deep
