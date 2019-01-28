@@ -1,0 +1,4 @@
+@{
+    NodeName = "DC"
+    Role = 'DomainController'
+}

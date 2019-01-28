@@ -1,0 +1,4 @@
+@{
+    NodeName = "ADFS"
+    Role = 'ADFSServer'
+}

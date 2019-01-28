@@ -1,0 +1,4 @@
+@{
+    NodeName = "WAP"
+    Role = 'WAPServer'
+}
