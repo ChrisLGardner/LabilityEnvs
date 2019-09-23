@@ -18,20 +18,6 @@ DatumStructure:
 lookup_options:
   Role:
     merge_hash: hash
-  Role\AllNodes: Unique
-  LCM_config:
-    merge_hash: hash
-  LCM_config\ConfigurationRepositoryShare: deep
-  LCM_config\ConfigurationRepositoryWeb: deep
-  LCM_config\PartialConfiguration: deep
-  LCM_config\ReportServerWeb: deep
-  LCM_config\ResourceRepositoryShare: deep
-  LCM_config\ResourceRepositoryWeb: deep
-  LCM_config\Settings: deep
-  SoftwareBase: hash
-  SoftwareBase\Packages:
+  Role\AllNodes: deep
+  Lability\DscResource:
     merge_hash_array: DeepTuple
-    merge_options:
-      tuple_keys:
-        - Name
-        - Version

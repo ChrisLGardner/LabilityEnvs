@@ -15,6 +15,12 @@ function Get-FilteredConfigurationData {
         $allNodes = [System.Collections.Hashtable[]]$allNodes.Where($Filter)
     }
 
+    foreach ($node in $allnodes.Role) {
+        foreach ($property in $datum.role.$node.AllNodes.Keys) {
+            ($allNodes | where-object Role -eq $node).$property = $datum.role.$node.AllNodes.$property
+        }
+    }
+
     return @{
         AllNodes = $allNodes
         Datum = $Datum
