@@ -1,6 +1,6 @@
 
 ResolutionPrecedence:
-  - 'Environments\$($Node.Environment)\$($Node.Name)'
+  - 'Environments\$($Node.Environment)\$($Node.NodeName)'
   - 'Role\$($Node.Role)'
 
 default_lookup_options: MostSpecific
@@ -19,5 +19,5 @@ lookup_options:
   Role:
     merge_hash: hash
   Role\AllNodes: deep
-  Lability\DscResource:
+  ^NonNodeData\Lability\DscResource:
     merge_hash_array: DeepTuple
